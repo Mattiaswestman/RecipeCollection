@@ -1,4 +1,5 @@
-﻿namespace recipe_collection
+﻿
+namespace recipe_collection
 {
     public partial class AppShell : Shell
     {
