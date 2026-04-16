@@ -19,9 +19,13 @@ namespace RecipeCollection
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainPageViewModel>();
+            builder.Services.AddTransient<CategoryPage>();
+            builder.Services.AddTransient<CategoryPageViewModel>();
+            builder.Services.AddTransient<RecipePage>();
+            builder.Services.AddTransient<RecipePageViewModel>();
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();
