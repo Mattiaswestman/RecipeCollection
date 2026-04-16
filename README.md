@@ -1,2 +1,2 @@
-# recipe-collection
-An app for collection of recipes for cooking.
+# Recipe Collection
+An app for the collection of recipes for cooking.
