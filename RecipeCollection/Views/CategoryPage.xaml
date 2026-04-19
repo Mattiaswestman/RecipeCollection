@@ -32,7 +32,7 @@
 			<Label Grid.Column="1"
 				   HorizontalOptions="Center"
 				   VerticalOptions="Center"
-				   Text="Category"
+				   Text="{Binding CategoryTitle}"
 				   FontSize="30"
 				   FontAttributes="Bold"
 				   TextColor="{StaticResource Orange}" />
@@ -44,6 +44,7 @@
 				<DataTemplate x:DataType="{x:Type x:String}">
 					<Grid Padding="15">
 						<Button Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryPageViewModel}}, Path=TapRecipeCommand}"
+								CommandParameter="{Binding .}"
 								BackgroundColor="{StaticResource Orange}"
 								Text="{Binding .}"
 								FontSize="18"

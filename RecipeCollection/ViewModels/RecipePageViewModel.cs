@@ -4,8 +4,12 @@ using RecipeCollection.Views;
 
 namespace RecipeCollection.ViewModels
 {
+    [QueryProperty("RecipeTitle", "RecipeTitle")]
     public partial class RecipePageViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private string recipeTitle;
+
         public RecipePageViewModel()
         {
         }

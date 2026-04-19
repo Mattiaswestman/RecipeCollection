@@ -32,7 +32,7 @@
 			<Label Grid.Column="1"
 				   HorizontalOptions="Center"
 				   VerticalOptions="Center"
-				   Text="Recipe"
+				   Text="{Binding RecipeTitle}"
 				   FontSize="30"
 				   FontAttributes="Bold"
 				   TextColor="{StaticResource Orange}" />

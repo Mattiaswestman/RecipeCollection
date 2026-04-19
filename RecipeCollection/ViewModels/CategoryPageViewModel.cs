@@ -5,10 +5,14 @@ using System.Collections.ObjectModel;
 
 namespace RecipeCollection.ViewModels
 {
+    [QueryProperty("CategoryTitle", "CategoryTitle")]
     public partial class CategoryPageViewModel : ObservableObject
     {
         [ObservableProperty]
         private ObservableCollection<string> recipes;
+
+        [ObservableProperty]
+        private string categoryTitle;
 
         public CategoryPageViewModel()
         {
@@ -19,9 +23,9 @@ namespace RecipeCollection.ViewModels
         }
 
         [RelayCommand]
-        private async Task TapRecipe()
+        private async Task TapRecipe(string recipeTitle)
         {
-            await Shell.Current.GoToAsync(nameof(RecipePage));
+            await Shell.Current.GoToAsync($"{nameof(RecipePage)}?RecipeTitle={Uri.EscapeDataString(recipeTitle)}");
         }
 
         [RelayCommand]
