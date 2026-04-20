@@ -1,7 +1,7 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using RecipeCollection.Views;
-using System.Collections.ObjectModel;
 
 namespace RecipeCollection.ViewModels
 {
@@ -10,16 +10,16 @@ namespace RecipeCollection.ViewModels
     {
         [ObservableProperty]
         private ObservableCollection<string> recipes;
-
         [ObservableProperty]
         private string categoryTitle;
+        [ObservableProperty]
+        private string recipeToAdd;
 
         public CategoryPageViewModel()
         {
             Recipes = new ObservableCollection<string>();
             Recipes.Add("Ost- & Skinkpaj");
             Recipes.Add("Pannkakor");
-            Recipes.Add("Hamburgare");
         }
 
         [RelayCommand]
@@ -32,6 +32,12 @@ namespace RecipeCollection.ViewModels
         private async Task TapReturn()
         {
             await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
+        private void AddNewRecipe()
+        {
+            Recipes.Add(RecipeToAdd);
         }
     }
 }
