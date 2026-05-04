@@ -24,7 +24,7 @@
 					Command="{Binding TapReturnCommand}"
 					BackgroundColor="{StaticResource Orange}"
 					Text="Back"
-					FontSize="18"
+					FontSize="24"
 					FontAttributes="Bold"
 					TextColor="{StaticResource EggWhite}">
 			</Button>
@@ -38,14 +38,46 @@
 				   TextColor="{StaticResource Orange}" />
 		</Grid>
 
-		<Grid Grid.Row="1">
-			<Label Grid.Column="1"
-				   HorizontalOptions="Center"
-				   VerticalOptions="Center"
-				   Text="Recipe text"
-				   FontSize="30"
-				   FontAttributes="Bold"
-				   TextColor="{StaticResource Gray600}" />
+		<Grid Grid.Row="1"
+			  ColumnSpacing="30">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.25*" />
+				<ColumnDefinition Width="0.75*" />
+			</Grid.ColumnDefinitions>
+
+			<Border Grid.Column="0"
+					HorizontalOptions="Fill"
+					VerticalOptions="Fill"
+					Padding="10, 10"
+					StrokeThickness="1">
+				<Border.StrokeShape>
+					<RoundRectangle CornerRadius="10" />
+				</Border.StrokeShape>
+
+				<Label HorizontalOptions="Start"
+					   VerticalOptions="Start"
+					   Text="2,5 dl vetemjöl&#10;0,5 tsk salt&#10;6 dl mjölk&#10;3 st ägg&#10;Ca 50 g smör"
+					   FontSize="24"
+					   FontAttributes="Bold"
+					   TextColor="{StaticResource Gray600}" />
+			</Border>
+
+			<Border Grid.Column="1"
+					HorizontalOptions="Fill"
+					VerticalOptions="Fill"
+					Padding="10, 10"
+					StrokeThickness="1">
+				<Border.StrokeShape>
+					<RoundRectangle CornerRadius="10" />
+				</Border.StrokeShape>
+
+				<Label HorizontalOptions="Start"
+					   VerticalOptions="Start"
+					   Text="1: Mät upp vetemjöl och salt i en bunke. Blanda.&#10;2: Tillsätt hälften av mjölken och vispa till en jämn smet.&#10;3: Vispa sedan i resten av mjölken.&#10;4: Vispa i äggen.&#10;5: Låt smeten stå och svälla, gärna i ca 20 minuter, så håller pannkakssmeten ihop bättre."
+					   FontSize="24"
+					   FontAttributes="Bold"
+					   TextColor="{StaticResource Gray600}" />
+			</Border>
 		</Grid>
 	</Grid>
 </ContentPage>

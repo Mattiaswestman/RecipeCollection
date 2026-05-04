@@ -24,6 +24,8 @@ namespace RecipeCollection
             builder.Services.AddTransient<CategoryPageViewModel>();
             builder.Services.AddTransient<RecipePage>();
             builder.Services.AddTransient<RecipePageViewModel>();
+            builder.Services.AddTransient<RecipeConfigPage>();
+            builder.Services.AddTransient<RecipeConfigPageViewModel>();
             builder.Services.AddScoped(s =>
             {
                 string databasePath = Path.Combine(FileSystem.AppDataDirectory, "Database.db");

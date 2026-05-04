@@ -51,14 +51,14 @@
 				   Placeholder="Enter Category..."
 				   PlaceholderColor="{StaticResource Gray600}"
 				   Text="{Binding CurrentCategory}"
-				   FontSize="18"
+				   FontSize="24"
 				   TextColor="{StaticResource Gray600}" />
 
 			<Button Grid.Column="1"
 					Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=AddCategoryCommand}"
 					BackgroundColor="{StaticResource Orange}"
 					Text="Add"
-					FontSize="18"
+					FontSize="24"
 					FontAttributes="Bold"
 					TextColor="{StaticResource EggWhite}" />
 
@@ -66,7 +66,7 @@
 					Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainPageViewModel}}, Path=RemoveCategoryCommand}"
 					BackgroundColor="{StaticResource Orange}"
 					Text="Remove"
-					FontSize="18"
+					FontSize="24"
 					FontAttributes="Bold"
 					TextColor="{StaticResource EggWhite}" />
 		</Grid>
