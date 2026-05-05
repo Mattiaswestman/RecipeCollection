@@ -25,6 +25,12 @@ namespace RecipeCollection.ViewModels
         }
 
         [RelayCommand]
+        private async Task OpenRecipeConfigPage()
+        {
+            await Shell.Current.GoToAsync(nameof(RecipeConfigPage));
+        }
+
+        [RelayCommand]
         private async Task TapCategory(string categoryTitle)
         {
             await Shell.Current.GoToAsync($"{nameof(CategoryPage)}?CategoryTitle={Uri.EscapeDataString(categoryTitle)}");

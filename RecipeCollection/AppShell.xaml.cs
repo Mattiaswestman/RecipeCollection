@@ -10,6 +10,7 @@ namespace RecipeCollection
 
             Routing.RegisterRoute(nameof(CategoryPage), typeof(CategoryPage));
             Routing.RegisterRoute(nameof(RecipePage), typeof(RecipePage));
+            Routing.RegisterRoute(nameof(RecipeConfigPage), typeof(RecipeConfigPage));
         }
     }
 }

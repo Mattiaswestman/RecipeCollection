@@ -23,15 +23,21 @@ namespace RecipeCollection.ViewModels
         }
 
         [RelayCommand]
-        private async Task TapRecipe(string recipeTitle)
+        private async Task OpenRecipeConfigPage()
         {
-            await Shell.Current.GoToAsync($"{nameof(RecipePage)}?RecipeTitle={Uri.EscapeDataString(recipeTitle)}");
+            await Shell.Current.GoToAsync(nameof(RecipeConfigPage));
         }
 
         [RelayCommand]
         private async Task TapReturn()
         {
             await Shell.Current.GoToAsync("..");
+        }
+
+        [RelayCommand]
+        private async Task TapRecipe(string recipeTitle)
+        {
+            await Shell.Current.GoToAsync($"{nameof(RecipePage)}?RecipeTitle={Uri.EscapeDataString(recipeTitle)}");
         }
 
         [RelayCommand]

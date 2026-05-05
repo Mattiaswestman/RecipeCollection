@@ -25,10 +25,9 @@
 					Command="{Binding TapReturnCommand}"
 					BackgroundColor="{StaticResource Orange}"
 					Text="Back"
-					FontSize="18"
+					FontSize="24"
 					FontAttributes="Bold"
-					TextColor="{StaticResource EggWhite}">
-			</Button>
+					TextColor="{StaticResource EggWhite}" />
 
 			<Label Grid.Column="1"
 				   HorizontalOptions="Center"
@@ -37,6 +36,14 @@
 				   FontSize="30"
 				   FontAttributes="Bold"
 				   TextColor="{StaticResource Orange}" />
+
+			<Button Grid.Column="2"
+					Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryPageViewModel}}, Path=OpenRecipeConfigPageCommand}"
+					BackgroundColor="{StaticResource Orange}"
+					Text="Add"
+					FontSize="24"
+					FontAttributes="Bold"
+					TextColor="{StaticResource EggWhite}" />
 		</Grid>
 		
 		<CollectionView Grid.Row="1"
