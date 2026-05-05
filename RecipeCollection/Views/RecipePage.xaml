@@ -10,7 +10,7 @@
 		  Padding="25">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*" />
-			<RowDefinition Height="*" />
+			<RowDefinition Height="0.75*" />
 		</Grid.RowDefinitions>
 
 		<Grid Grid.Row="0">

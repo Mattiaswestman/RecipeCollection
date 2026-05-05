@@ -14,8 +14,8 @@ namespace RecipeCollection
         {
             var window = base.CreateWindow(activationState);
 
-            const int newWidth = 1200;
-            const int newHeight = 1000;
+            const int newWidth = 1920;
+            const int newHeight = 1080;
 
             window.Width = newWidth;
             window.Height = newHeight;

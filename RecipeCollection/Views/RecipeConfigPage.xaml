@@ -10,13 +10,16 @@
 		  Padding="25">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*" />
-			<RowDefinition Height="*" />
+			<RowDefinition Height="0.25*" />
+			<RowDefinition Height="0.25*" />
+			<RowDefinition Height="0.25*" />
 		</Grid.RowDefinitions>
 
 		<Grid Grid.Row="0">
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="0.25*" />
-				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="0.5*" />
+				<ColumnDefinition Width="0.25*" />
 			</Grid.ColumnDefinitions>
 
 			<Button Grid.Column="0"
@@ -26,6 +29,49 @@
 					FontSize="24"
 					FontAttributes="Bold"
 					TextColor="{StaticResource EggWhite}" />
+
+			<Button Grid.Column="2"
+					Command="{Binding TapSaveCommand}"
+					BackgroundColor="{StaticResource Orange}"
+					Text="Save"
+					FontSize="24"
+					FontAttributes="Bold"
+					TextColor="{StaticResource EggWhite}" />
 		</Grid>
+
+		<Grid Grid.Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0.5*" />
+				<RowDefinition Height="0.5*" />
+			</Grid.RowDefinitions>
+
+			<Entry Grid.Row="0"
+				   Placeholder="Enter Title..."
+				   PlaceholderColor="{StaticResource Gray600}"
+				   Text="{Binding Title}"
+				   FontSize="24"
+				   TextColor="{StaticResource Gray600}" />
+
+			<Entry Grid.Row="1"
+				   Placeholder="Enter Category..."
+				   PlaceholderColor="{StaticResource Gray600}"
+				   Text="{Binding Category}"
+				   FontSize="24"
+				   TextColor="{StaticResource Gray600}" />
+		</Grid>
+
+		<Entry Grid.Row="2"
+			   Placeholder="Enter Ingredients..."
+			   PlaceholderColor="{StaticResource Gray600}"
+			   Text="{Binding Ingredients}"
+			   FontSize="24"
+			   TextColor="{StaticResource Gray600}" />
+
+		<Entry Grid.Row="3"
+			   Placeholder="Enter Instructions..."
+			   PlaceholderColor="{StaticResource Gray600}"
+			   Text="{Binding Instructions}"
+			   FontSize="24"
+			   TextColor="{StaticResource Gray600}" />
 	</Grid>
 </ContentPage>
