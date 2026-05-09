@@ -55,7 +55,7 @@
 			<Entry Grid.Row="1"
 				   Placeholder="Enter Category..."
 				   PlaceholderColor="{StaticResource Gray600}"
-				   Text="{Binding Category}"
+				   Text="{Binding CategoryTitle}"
 				   FontSize="24"
 				   TextColor="{StaticResource Gray600}" />
 		</Grid>

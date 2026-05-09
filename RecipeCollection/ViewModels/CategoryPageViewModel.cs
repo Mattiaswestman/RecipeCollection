@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.EntityFrameworkCore;
+using RecipeCollection.Services;
 using RecipeCollection.Views;
 
 namespace RecipeCollection.ViewModels
@@ -12,14 +14,14 @@ namespace RecipeCollection.ViewModels
         private ObservableCollection<string> recipes;
         [ObservableProperty]
         private string categoryTitle;
-        [ObservableProperty]
-        private string recipeToAdd;
 
-        public CategoryPageViewModel()
+        private RecipeCollectionDbContext database;
+
+        public CategoryPageViewModel(RecipeCollectionDbContext database)
         {
+            this.database = database;
             Recipes = new ObservableCollection<string>();
-            Recipes.Add("Ost- & Skinkpaj");
-            Recipes.Add("Pannkakor");
+            UpdateRecipesAsync();
         }
 
         [RelayCommand]
@@ -40,16 +42,17 @@ namespace RecipeCollection.ViewModels
             await Shell.Current.GoToAsync($"{nameof(RecipePage)}?RecipeTitle={Uri.EscapeDataString(recipeTitle)}");
         }
 
-        [RelayCommand]
-        private void AddRecipe()
+        private async Task UpdateRecipesAsync()
         {
-            Recipes.Add(RecipeToAdd);
-        }
+            Recipes.Clear();
+            var recipes = await database.Recipes
+                .OrderBy(r => r.Title.Substring(0, 1))
+                .ToListAsync();
 
-        [RelayCommand]
-        private void RemoveRecipe()
-        {
-            Recipes.Remove(RecipeToAdd);
+            foreach (var recipe in recipes)
+            {
+                Recipes.Add(recipe.Title);
+            }
         }
     }
 }

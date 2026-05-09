@@ -10,8 +10,7 @@
 		  Padding="25">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="0.25*" />
-			<RowDefinition Height="0.5*" />
-			<RowDefinition Height="0.25*" />
+			<RowDefinition Height="0.75*" />
 		</Grid.RowDefinitions>
 
 		<Grid Grid.Row="0">
@@ -45,7 +44,7 @@
 					FontAttributes="Bold"
 					TextColor="{StaticResource EggWhite}" />
 		</Grid>
-		
+
 		<CollectionView Grid.Row="1"
 						ItemsSource="{Binding Recipes}">
 			<CollectionView.ItemTemplate>
@@ -63,37 +62,5 @@
 				</DataTemplate>
 			</CollectionView.ItemTemplate>
 		</CollectionView>
-
-		<Grid Grid.Row="2"
-			  ColumnSpacing="20">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="0.7*" />
-				<ColumnDefinition Width="0.15*" />
-				<ColumnDefinition Width="0.15*" />
-			</Grid.ColumnDefinitions>
-
-			<Entry Grid.Column="0"
-				   Placeholder="Enter Category..."
-				   PlaceholderColor="{StaticResource Gray600}"
-				   Text="{Binding RecipeToAdd}"
-				   FontSize="24"
-				   TextColor="{StaticResource Gray600}" />
-
-			<Button Grid.Column="1"
-					Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryPageViewModel}}, Path=AddRecipeCommand}"
-					BackgroundColor="{StaticResource Orange}"
-					Text="Add"
-					FontSize="24"
-					FontAttributes="Bold"
-					TextColor="{StaticResource EggWhite}" />
-
-			<Button Grid.Column="2"
-					Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CategoryPageViewModel}}, Path=RemoveRecipeCommand}"
-					BackgroundColor="{StaticResource Orange}"
-					Text="Remove"
-					FontSize="24"
-					FontAttributes="Bold"
-					TextColor="{StaticResource EggWhite}" />
-		</Grid>
 	</Grid>
 </ContentPage>
