@@ -56,7 +56,7 @@
 
 				<Label HorizontalOptions="Start"
 					   VerticalOptions="Start"
-					   Text="2,5 dl vetemjöl&#10;0,5 tsk salt&#10;6 dl mjölk&#10;3 st ägg&#10;Ca 50 g smör"
+					   Text="{Binding IngredientsText}"
 					   FontSize="24"
 					   FontAttributes="Bold"
 					   TextColor="{StaticResource Gray600}" />
@@ -73,7 +73,7 @@
 
 				<Label HorizontalOptions="Start"
 					   VerticalOptions="Start"
-					   Text="1: Mät upp vetemjöl och salt i en bunke. Blanda.&#10;2: Tillsätt hälften av mjölken och vispa till en jämn smet.&#10;3: Vispa sedan i resten av mjölken.&#10;4: Vispa i äggen.&#10;5: Låt smeten stå och svälla, gärna i ca 20 minuter, så håller pannkakssmeten ihop bättre."
+					   Text="{Binding InstructionsText}"
 					   FontSize="24"
 					   FontAttributes="Bold"
 					   TextColor="{StaticResource Gray600}" />
