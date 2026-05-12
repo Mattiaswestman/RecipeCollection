@@ -9,5 +9,15 @@ namespace RecipeCollection.Views
             InitializeComponent();
             BindingContext = viewModel;
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (BindingContext is CategoryPageViewModel viewModel)
+            {
+                await viewModel.UpdateRecipesAsync();
+            }
+        }
     }
 }

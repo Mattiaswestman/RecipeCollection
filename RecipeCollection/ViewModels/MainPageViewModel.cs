@@ -33,7 +33,7 @@ namespace RecipeCollection.ViewModels
             await Shell.Current.GoToAsync($"{nameof(CategoryPage)}?CategoryTitle={Uri.EscapeDataString(categoryTitle)}");
         }
 
-        private async Task UpdateCategoriesAsync()
+        public async Task UpdateCategoriesAsync()
         {
             Categories.Clear();
             var categories = await database.Categories

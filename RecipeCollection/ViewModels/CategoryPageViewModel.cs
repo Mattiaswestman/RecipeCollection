@@ -42,7 +42,7 @@ namespace RecipeCollection.ViewModels
             await Shell.Current.GoToAsync($"{nameof(RecipePage)}?RecipeTitle={Uri.EscapeDataString(recipeTitle)}");
         }
 
-        private async Task UpdateRecipesAsync()
+        public async Task UpdateRecipesAsync()
         {
             Recipes.Clear();
             var recipes = await database.Recipes
