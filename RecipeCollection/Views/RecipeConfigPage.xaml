@@ -60,14 +60,14 @@
 				   TextColor="{StaticResource Gray600}" />
 		</Grid>
 
-		<Entry Grid.Row="2"
+		<Editor Grid.Row="2"
 			   Placeholder="Enter Ingredients..."
 			   PlaceholderColor="{StaticResource Gray600}"
 			   Text="{Binding Ingredients}"
 			   FontSize="24"
 			   TextColor="{StaticResource Gray600}" />
 
-		<Entry Grid.Row="3"
+		<Editor Grid.Row="3"
 			   Placeholder="Enter Instructions..."
 			   PlaceholderColor="{StaticResource Gray600}"
 			   Text="{Binding Instructions}"
